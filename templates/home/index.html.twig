@@ -1,27 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController! {% endblock %}
 
 {% block body %}
 <p>bienvenue sur le site web</p>
 
-<!-- app est une variable globale -->
-{% if app.user %}
-<p>
-  <a href="{{path('app_logout')}}">
-    logout
-  </a>
-</p>
-{% else %}
-<p>
-  <a href="{{path('app_register')}}">
-    register
-  </a>
-</p>
-<p>
-  <a href="{{path('app_login')}}">
-    login
-  </a>
-</p>
-{% endif %}
 {% endblock %}

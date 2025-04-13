@@ -1,0 +1,43 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto p-4 flex justify-between items-center">
+    <ul class="flex w-full space-x-4 items-center justify-between">
+      {# main nav #}
+      <div class="flex space-x-4 items-center">
+        <li>
+          <a href="{{ path('app_home') }}" class="text-xl font-bold text-gray-800">WordPraisse</a>
+        </li>
+        <li>
+          <a href="{{ path('app_home') }}" class="py-2.5 px-5 me-2 text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+            <i class="fa-solid fa-newspaper"></i>
+            Articles
+          </a>
+        </li>
+      </div>
+      <div class="flex space-x-4">
+        {# user account nav #}
+        {% if app.user %}
+        <!-- Mettre lien vers pages Back office -->
+          <li>
+            <a href="{{ path('app_logout') }}" class="underline hover:no-underline transition duration-300">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              logout
+            </a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ path('app_register') }}" class="underline hover:no-underline transition duration-300">
+              <i class="fa-solid fa-user-plus"></i>
+              Register
+            </a>
+          </li>
+          <li>
+            <a href="{{ path('app_login') }}" class="underline hover:no-underline transition duration-300">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Login
+            </a>
+          </li>
+        {% endif %}
+      </div>
+    </ul>
+  </nav>
+</header>
