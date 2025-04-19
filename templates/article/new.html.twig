@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block metaTitle %} new article {% endblock %}
+{% block title %}new article {% endblock %}
+
+{% block body %}
+  <div class="flex gap-24">
+    {{form(form)}}
+    {# {{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.task) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.dueDate) }}
+        </div>
+    </div>
+{{ form_end(form) }} #}
+{% endblock %}
