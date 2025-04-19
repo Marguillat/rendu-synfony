@@ -23,7 +23,9 @@ class Article
   #[ORM\Column]
   private ?\DateTimeImmutable $createdAt = null;
 
-  #[ORM\ManyToOne(inversedBy: "articles")]
+  // [TODO] changer la requette pour plus de sécurité
+  // attention le mode eager récupère toutes les info du user même son mot de pass hashé
+  #[ORM\ManyToOne(inversedBy: "articles", fetch: "EAGER")]
   #[ORM\JoinColumn(nullable: false)]
   private ?User $author = null;
 
