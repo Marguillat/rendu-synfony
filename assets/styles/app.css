@@ -5,3 +5,27 @@ body {
 a {
   display: block;
 }
+
+.fit-content {
+  width: fit-content;
+  height: fit-content;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.my-custom-class {
+    background-color: #f9f9f9;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
