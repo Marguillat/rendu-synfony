@@ -5,19 +5,26 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
   #[ORM\Id]
   #[ORM\GeneratedValue]
-  #[ORM\Column]
+  #[ORM\Column(type: 'integer')]
   private ?int $id = null;
 
-  #[ORM\Column(length: 255)]
+  #[ORM\Column(type: 'string', length: 255)]
+  #[Assert\NotBlank(message: 'The title cannot be blank.')]
+  #[Assert\Length(
+    max: 255,
+    maxMessage: 'The title cannot be longer than {{ limit }} characters.'
+  )]
   private ?string $title = null;
 
-  #[ORM\Column(type: Types::TEXT, nullable: true)]
+  #[ORM\Column(type: 'text')]
+  #[Assert\NotBlank(message: 'The content cannot be blank.')]
   private ?string $content = null;
 
   #[ORM\Column]

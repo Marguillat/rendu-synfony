@@ -1,22 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block metaTitle %} {{article.title}} {% endblock %}
-{% block title %}Unique article {% endblock %}
+{% block metaTitle %}
+	{{article.title}}
+{% endblock %}
+{% block title %}Unique article
+{% endblock %}
 
 {% block body %}
-  <div class="flex gap-24">
-    <img src="{{asset('images/placeholder.svg')}}" class="rounded-lg aspect-square object-cover w-2/5"/>
-    <div class="flex flex-col gap-8">
-      <h2 class="text-3xl font-bold">{{article.title}}</h2>
-      <span>
-        <i class="fa-solid fa-user"></i>
-        Auteur : {{article.author.email}}
-      </span>
-      <span class="text-gray-400">
-        <i class="fa-solid fa-pencil"></i>
-        {{article.createdAt|date('d/m/Y')}}
-      </span>
-    </div>
-  </div>
-  <article>{{ article.content }}</article>
+	<div class="flex gap-24">
+		<img src="{{asset('images/placeholder.svg')}}" class="rounded-lg aspect-square object-cover w-2/5"/>
+		<div class="flex flex-col gap-8">
+			<h2 class="text-3xl font-bold">{{article.title}}</h2>
+			<span>
+				<i class="fa-solid fa-user"></i>
+				Auteur :
+				{{article.author.email}}
+			</span>
+			<span class="text-gray-400">
+				<i class="fa-solid fa-pencil"></i>
+				{{article.createdAt|date('d/m/Y')}}
+			</span>
+		</div>
+	</div>
+	<article>{{ article.content }}</article>
+	<a href="{{ path('app_article_edit', {id: article.id}) }}">Editer</a>
 {% endblock %}
