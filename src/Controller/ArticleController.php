@@ -64,4 +64,19 @@ final class ArticleController extends AbstractController
       "form" => $form->createView(),
     ]);
   }
+
+  #[Route("/articles/{id}/delete", name: "app_article_delete")]
+  public function deleteArticle(EntityManagerInterface $em, int $id): Response
+  {
+    $article = $em->getRepository(Article::class)->find($id);
+
+    if (!$article) {
+      throw $this->createNotFoundException('Article not found');
+    }
+
+    $em->remove($article);
+    $em->flush();
+
+    return $this->redirectToRoute('app_articles');
+  }
 }
