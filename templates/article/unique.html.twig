@@ -14,15 +14,20 @@
 			<span>
 				<i class="fa-solid fa-user"></i>
 				Auteur :
-				{{article.author.email}}
+				{{article.author.username}}
 			</span>
 			<span class="text-gray-400">
 				<i class="fa-solid fa-pencil"></i>
 				{{article.createdAt|date('d/m/Y')}}
 			</span>
+			<div>
+  			<h2 class="font-bold">Contenu de l'article : </h2>
+  			<article>{{ article.content }}</article>
+			</div>
 		</div>
 	</div>
-	<article>{{ article.content }}</article>
-	<a href="{{ path('app_article_edit', {id: article.id}) }}">Editer</a>
-	<a href="{{ path('app_article_delete', {id: article.id}) }}">Supprimer</a>
+	<div class="flex gap-4 mt-4">
+  	<a class="border p-2 rounded-md hover:bg-blue-400 bg-blue-300 w-fit" href="{{ path('app_article_edit', {id: article.id}) }}">Editer</a>
+  	<a class="border p-2 rounded-md hover:bg-red-400 bg-red-300 w-fit" href="{{ path('app_article_delete', {id: article.id}) }}">Supprimer</a>
+  </div>
 {% endblock %}

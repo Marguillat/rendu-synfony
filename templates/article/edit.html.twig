@@ -1,5 +1,32 @@
-{# filepath: /Applications/MAMP/htdocs/rendu-synfony/templates/article/edit.html.twig #}
-{{ form_start(form) }}
-{{ form_widget(form) }}
-<button type="submit">Save</button>
-{{ form_end(form) }}
+{% extends 'base.html.twig' %}
+
+{% block metaTitle %}
+    {{ article.title }}
+{% endblock %}
+
+{% block title %}
+    Modifier l'article
+{% endblock %}
+
+{% block body %}
+    <div class="max-w-md mx-auto bg-white p-8 border border-gray-300 rounded-lg shadow-md">
+        {{ form_start(form, {'attr': {'class': 'space-y-4'}}) }}
+
+        <div class="space-y-4">
+            {{ form_row(form.title, {
+                'label_attr': {'class': 'block text-sm font-medium text-gray-700'},
+                'attr': {'class': 'mt-1 block w-full h-8 px-2 rounded-md border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}
+            }) }}
+
+            {{ form_row(form.content, {
+                'label_attr': {'class': 'block text-sm font-medium text-gray-700'},
+                'attr': {'class': 'field-sizing-content min-h-32 mt-1 block w-full h-8 px-2 rounded-md border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}
+            }) }}
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+            Save
+        </button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
