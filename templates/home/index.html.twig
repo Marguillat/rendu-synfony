@@ -1,8 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController! {% endblock %}
+{% block title %}Welcome to Wordpraisse
+{% endblock %}
 
 {% block body %}
-<p>bienvenue sur le site web</p>
+	<div
+		class=" bg-gradient-to-b from-blue-50 to-white">
+		<!-- Hero Section -->
+		<div class="container mx-auto px-4 py-16">
+			<div class="text-center">
+				<h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-4">Bienvenue sur Wordpraisse</h1>
+				<p class="text-xl text-gray-600 mb-8">Un super cms qui fonctionne</p>
+			</div>
+		</div>
+	</div>
 
-{% endblock %}
+	<!-- Features Section -->
+	<div class="container mx-auto px-4 py-16">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+				<div class="text-blue-600 text-4xl mb-4">
+					<i class="fas fa-edit"></i>
+				</div>
+				<h3 class="text-xl font-semibold mb-2">Management facile</h3>
+				<p class="text-gray-600">Créer et éditer vos articles en 1 click</p>
+			</div>
+
+			<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+				<div class="text-blue-600 text-4xl mb-4">
+					<i class="fas fa-rocket"></i>
+				</div>
+				<h3 class="text-xl font-semibold mb-2">Hyper rapide</h3>
+				<p class="text-gray-600">Optimisé par le fait qu'il est minuscule</p>
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}
