@@ -12,7 +12,7 @@ Ce projet est basé sur le sujet du mini cms avec sa gestion d'articles.
 
 ## Equipe
 
-- [Louka Lemonier](https://github.com/loukalost)
+- [Louka Lemonier](https://github.com/loukalost) - Je tiens à préciser que mon fichier reponses.md est sur la branche louka
 - [Erwan DUCHÊNE](https://github.com/Marguillat)
 
 ## Documentation
